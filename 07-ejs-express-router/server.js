@@ -4,19 +4,33 @@ const express = require('express');
 const server = express();
 
 // 1. Add express Router
+const peopleRouter = express.Router()
 
 
 server.set('views', './src/views');
 
 server.set('view engine', 'ejs');
 
-// 3. Add peopleRouter and a get route here
-
-
-// 4. Create a route for just one person from your person data
-
 // 2. Use middleware to connect your peopleRouter to your /people route
 server.use('/people', peopleRouter)
+
+// 3. Add peopleRouter and a get route here
+// peopleRouter.get('/people', (req, res) =>{
+//     res.render('people', {title: people})
+// })
+peopleRouter.route('/').get((req, res) => {
+    res.render('people', 
+        {title: 'Welcome to the people page',})
+})
+
+peopleRouter.route(`${'/1'}`).get((req, res) => {
+    res.send("...from people at index 1")
+})
+
+// 4. Create a route for just one person from your person data
+peopleRouter.get('/people/1', (req, res) => {
+    res.send('... from people at index 1')
+})
 
 server.get("/", (req, res) => {
     // Add the data array inside of the object

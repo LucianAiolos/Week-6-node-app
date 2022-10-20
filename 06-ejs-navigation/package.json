@@ -1,7 +1,7 @@
 {
   "name": "01-express-server-review",
   "version": "1.0.0",
-  "description": "",
+  "description": "### 2. Add navigation from the about page to home page.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,5 +12,6 @@
   "dependencies": {
     "ejs": "^3.1.8",
     "express": "^4.18.2"
-  }
+  },
+  "devDependencies": {}
 }

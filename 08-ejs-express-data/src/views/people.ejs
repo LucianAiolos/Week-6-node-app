@@ -5,11 +5,16 @@
             <a href="/">home</a>
             <a href="/about">about</a>
         </nav>
-        <ul>
+        <!-- <ul>
             <% people.map((person) => {
             %><li><%= person.name %></li><%
             })
             %>
+        </ul> -->
+        <ul>
+            <% people.map((p) => { %>
+                <li><a href="/p"<%= p.name %>></li>
+            <% }) %>
         </ul>
     </body>
 </html>

@@ -1,21 +1,20 @@
-const express = require('express');
+const express = require('express')
+const app = express()
 
-const server = express();
+const PORT = 8080
 
-server.set('views', './src/views');
+app.set('views', './src/views')
+app.set('view engine', 'ejs')
 
-server.set('view engine', 'ejs');
-
-server.get("/", (req, res) => {
-
-    res.render('index', {title: "Welcome to the Home Page", data: ["Leanne Graham", "Ervin Howell", "Clementine Bauch", "Patricia Lesbsack", "Chelsey Dietrich", "Dennis Schulist", "Kurtis Weissnat", "Nicholas Runolfsdottir V", "Glenna Reichert", "Clementina DuBuque"]})
+app.get('/', (req, res) => {
+  res.render('index', {title: 'Welcome To My Server', names: ["Lucian", "Anna", "Mia", "Max"]})
 })
 
-server.get("/about", (req, res) => {
-    res.render('about', {title: "Welcome to the About Page"})
+app.get('/', (req, res) => {
+  res.render('about', {title: 'This is my about page!', about: "lorem ipsum muahahahah!"})
 })
-let PORT = 3000;
 
-server.listen(PORT, () => {
-    console.log("Listening on ", PORT)
+
+app.listen(PORT, ()=> {
+  console.log('Hello from ', PORT)
 })

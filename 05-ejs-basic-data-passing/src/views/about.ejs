@@ -1,0 +1,14 @@
+<!-- 
+    add the html for the about page here 
+    use ejs syntax to render the title dynamically
+-->
+
+<html>
+    <body>
+        <h1>HELLO WORLD!</h1>
+        <h2>Hello again!</h2>
+        <% for(var i = 0; i <names.length; i++) { %>
+            <h3><%= names[i] %></h3>
+      <%  } %>
+    </body>
+</html>

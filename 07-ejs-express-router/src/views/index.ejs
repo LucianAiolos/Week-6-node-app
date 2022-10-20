@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h1>HELLO! <%= title%></h1>
+        <nav>
+            <a href="/about">about</a>
+        </nav>
+        <ul>
+            <% data.map((name) => {
+            %><li><%= name %></li><%
+            })
+            %>
+        </ul>
+    </body>
+</html>

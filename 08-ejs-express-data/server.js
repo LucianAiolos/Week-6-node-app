@@ -18,9 +18,12 @@ peopleRouter.route('/').get((req, res) => {
       })
     })
 
-peopleRouter.route('/1')
+peopleRouter.route('/:id')
 .get((req, res) => {
-    res.send("...from people at index 1")
+    let id = req.params.id
+    // res.send("...from people at index 1")
+    console.log(id)
+    res.render('person', {person: people[`${people.id}`]})
 })
 
 

@@ -12,8 +12,8 @@
             %>
         </ul> -->
         <ul>
-            <% people.map((p) => { %>
-                <li><a href="/p"<%= p.name %>></li>
+            <% people.map((person, i) => { %>
+                <li><a href="/people/<%=person.id%> "<p><%= p.name %>></p></li>
             <% }) %>
         </ul>
     </body>
